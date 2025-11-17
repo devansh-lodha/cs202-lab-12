@@ -33,6 +33,8 @@
             quantityNumericUpDown = new NumericUpDown();
             btnProcessOrder = new Button();
             lblStatus = new Label();
+            chkExpress = new CheckBox();
+            btnShipOrder = new Button();
             ((System.ComponentModel.ISupportInitialize)quantityNumericUpDown).BeginInit();
             SuspendLayout();
             // 
@@ -43,6 +45,7 @@
             customerNameTextBox.Name = "customerNameTextBox";
             customerNameTextBox.Size = new Size(530, 43);
             customerNameTextBox.TabIndex = 0;
+            customerNameTextBox.TextChanged += customerNameTextBox_TextChanged;
             // 
             // productComboBox
             // 
@@ -65,7 +68,7 @@
             // btnProcessOrder
             // 
             btnProcessOrder.Font = new Font("Segoe UI", 20F);
-            btnProcessOrder.Location = new Point(267, 338);
+            btnProcessOrder.Location = new Point(33, 333);
             btnProcessOrder.Name = "btnProcessOrder";
             btnProcessOrder.Size = new Size(276, 86);
             btnProcessOrder.TabIndex = 3;
@@ -83,11 +86,36 @@
             lblStatus.Text = "Status: Awaiting Order";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // chkExpress
+            // 
+            chkExpress.AutoSize = true;
+            chkExpress.Font = new Font("Segoe UI", 20F);
+            chkExpress.Location = new Point(340, 357);
+            chkExpress.Name = "chkExpress";
+            chkExpress.Size = new Size(236, 41);
+            chkExpress.TabIndex = 5;
+            chkExpress.Text = "Express Shipping";
+            chkExpress.UseVisualStyleBackColor = true;
+            chkExpress.Click += chkExpress_CheckedChanged;
+            // 
+            // btnShipOrder
+            // 
+            btnShipOrder.Font = new Font("Segoe UI", 20F);
+            btnShipOrder.Location = new Point(594, 333);
+            btnShipOrder.Name = "btnShipOrder";
+            btnShipOrder.Size = new Size(157, 86);
+            btnShipOrder.TabIndex = 6;
+            btnShipOrder.Text = "Ship Order";
+            btnShipOrder.UseVisualStyleBackColor = true;
+            btnShipOrder.Click += btnShipOrder_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnShipOrder);
+            Controls.Add(chkExpress);
             Controls.Add(lblStatus);
             Controls.Add(btnProcessOrder);
             Controls.Add(quantityNumericUpDown);
@@ -107,5 +135,7 @@
         private NumericUpDown quantityNumericUpDown;
         private Button btnProcessOrder;
         private Label lblStatus;
+        private CheckBox chkExpress;
+        private Button btnShipOrder;
     }
 }
